@@ -1,0 +1,403 @@
+@charset "UTF-8"
+
+@import '_options'
+@import '_defaults'
+@import '_fonts'
+
+html
+    font-family: "HelveticaNeue"
+    font-size: 15px
+    font-weight: normal
+    color: #3e434a
+
+.container
+    width: 100%
+    max-width: 1110px
+    margin: 0 auto
+    padding: 0 10px    
+
+.header
+    padding-top: 45px
+    padding-bottom: 20px
+    color: #ffffff
+    background-color: rgba(0, 0, 0, .8)
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    &-grid
+        display: flex
+        justify-content: space-between
+        align-items: center
+
+.logo
+    font-size: 21px
+    font-weight: bold
+    text-transform: uppercase
+
+.nav-list
+    display: flex
+    li + li
+        margin-left: 20px
+    &-link:hover
+        text-decoration: underline
+
+.main
+    &-title
+        font-size: 48px
+        max-width: 520px
+    &-text
+        font-size: 18px
+        max-width: 520px
+        line-height: 2
+        margin-top: 10px
+    & > *:nth-child(even)
+        background-color: #f7f8fa
+        border: 1px solid #ebedf0
+
+.block1
+    background-color: #000
+    color: #ffffff
+    &-gradient
+        padding-top: 120px
+        padding-bottom: 165px
+        background-image: linear-gradient(to left, #000, rgba(255,255,255, .2), #000)
+        box-shadow: inset 0 150px 150px 0 #000
+
+.button
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    min-width: 175px
+    height: 50px
+    border: 1px solid #979797
+    border-radius: 6px
+    transition: .2s
+    &:hover
+        background-color: $mainColor
+        border-color: $mainColor
+
+.main-buttons
+    display: flex
+    margin: -5px
+    margin-top: 35px
+    &-item
+        padding: 5px
+
+.nav-toggle
+    display: none
+    width: auto
+    min-width: initial
+    height: auto
+    padding: 10px
+    background-color: initial
+    color: #ffffff
+    &-input
+        display: none
+
+.promotion
+    padding-bottom: 45px
+    &-grid
+        display: flex
+        align-items: center
+    &-title
+        font-size: 24px
+    &-text
+        color: #7e848e
+        margin-top: 25px
+    &-img
+        margin-top: -75px
+
+.title
+    text-align: center
+    font-size: 30px
+
+.sub-title
+    text-align: center
+    font-size: 21px
+    font-weight: normal
+    color: #7e848e
+    margin-top: 25px
+
+.features
+    padding: 70px 0
+
+@include grid(features, 10, 40, wrap, 4, 10)
+
+.features-item
+    text-align: center
+    padding: 15px
+    position: relative
+    &-icon
+        padding-top: 15px
+        font-family: monospace
+        font-size: 64px
+        line-height: 1
+    &-title
+        font-size: 17px
+        margin-top: 30px
+        font-weight: normal
+        color: #42474e
+    &-text
+        color: #898f98
+        font-size: 14px
+        line-height: 1.7
+        margin-top: 10px
+    &-button
+        min-width: 105px
+        height: 35px
+        margin-top: 20px
+        font-size: 14px
+        color: #898f98
+        border-color: #e5e6e9
+        background-image: linear-gradient(to bottom, #fcfcfd, #fdfdfd)
+    &:before, &:after
+        content: ""
+        position: absolute
+        width: 100%
+        height: 100%
+        left: 0
+    &:before
+        top: 0
+        border: 1px solid #b9b7b7
+        border-radius: 6px
+        z-index: -2
+    &:after
+        bottom: -5px
+        border: 1px solid transparent
+        background-image: linear-gradient(to top, #fff 40%, transparent)
+        z-index: -1
+
+.tesimonails
+    padding: 65px 0 40px 0
+
+@include grid(tesimonails, 10, 55, no-wrap, 3, 0 30)
+
+.tesimonails-item
+    &-text
+        display: inline-flex
+        color: #656b74
+        font-size: 13px
+        line-height: 1.7
+        padding: 25px
+        background-color: #ffffff
+        border-radius: 3px
+        position: relative
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.1)
+    &-text:before, &-text:after
+        content: ""
+        position: absolute
+        width: 0
+        height: 0
+        border-style: solid
+        top: 100%
+    &-text:before
+        left: 15px
+        border-width: 25px 25px 0 0
+        border-color: rgba(0,0,0,.02) transparent transparent transparent
+    &-text:after
+        top: 100%
+        left: 20px
+        border-width: 15px 15px 0 0
+        border-color: #ffffff transparent transparent transparent
+    &-speaker
+        display: flex
+        align-items: center
+        padding: 25px 0
+    &-speaker-pic
+        width: 50px
+        height: 50px
+        border-radius: 50%
+        flex-shrink: 0
+    &-speaker-prof
+        font-size: 12px
+        color: inherit
+        padding-left: 10px
+    &-speaker-name
+        text-transform: capitalize
+        color: #4e9271
+        &:hover
+            cursor: pointer
+            text-decoration: underline
+
+.tesimonails-checkpoint-grid
+    margin-top: 20px
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    &-col
+        position: relative
+    &-col + &-col
+        margin-left: 5px
+
+.tesimonails-checkpoint-item
+    width: 15px
+    height: 15px
+    border: 3px solid $mainColor
+    border-radius: 50%
+    &-click
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        width: 15px
+        height: 15px
+        opacity: 0
+    &-click:checked + &
+        background-color: $mainColor
+
+.trial-title
+    font-size: 36px
+    color: #ffffff
+    text-align: center
+
+.trial-sub-title
+    text-align: center
+    font-size: 21px
+    font-weight: normal
+    color: #95cde0
+    margin-top: 25px
+
+.start-your-trial
+    background-color: $mainColor
+    padding: 85px 0 80px
+    &-item
+        display: flex
+        justify-content: center
+        margin-top: 30px
+    &-button
+        min-width: 170px
+        height: 50px
+        font-size: 16px
+        color: #ffffff
+        border-color: #ffffff
+        background-color: transparent
+        &:hover
+            color: #176f8d
+            background-color: #ffffff
+            border-color: #ffffff
+
+.footer
+    background-color: #3e434a
+    padding: 0 10px 40px 0
+
+
+.footer-grid
+    display: flex
+    flex-wrap: wrap
+    &-col
+        width: calc((70% / 3)
+        &:nth-child(4)
+            width: 30%
+
+.footer-item
+    position: relative
+    padding-left: 15px
+    &-title
+        padding-top: 45px
+        color: #d0d6dd
+        font-size: 13px
+    &-text
+        padding-top: 30px
+        display: inline-flex
+        flex-direction: column
+    &-link
+        font-size: 13px
+        color: #a5abb2
+        width: fit-content
+        &:hover 
+            cursor: pointer
+            text-decoration: underline
+    &-text-part
+        font-size: 13px
+        color: #a5abb2
+    &-link + &-link
+        padding-top: 10px
+    &-mail
+        display: flex
+        margin-top: 30px
+        font-size: 12px
+        display: flex
+    &-mail-pole
+        height: 35px
+        width: 205px
+        border-radius: 3px
+        background-color: #ffffff
+    &-mail-button
+        min-width: 90px
+        height: 35px
+        margin-left: 7px
+
+.mail-pole
+    background-color: transparent
+    border: none
+    height: 100%
+    width: 100%
+    padding-left: 15px
+    padding-right: 15px
+    &::placeholder
+        color: #cbcbcb
+        opacity: 1
+    &:focus::placeholder
+        opacity: 0
+
+.mail-button
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 100%
+    font-size: 12px
+    color: #bbc1c8
+    border-radius: 2px
+    border: none
+    background-image: linear-gradient(to bottom, #565c64, #4a4f57)
+    transition: .2s
+    &:hover
+        background-image: linear-gradient(to bottom, #4a4f57, #565c64)
+        border: none
+
+.copyright-text
+    margin-top: 85px
+    padding: 30px 10px 0 10px
+    border-top: 1px solid #51565d
+    vertical-align: middle
+    font-size: 13px
+    color: #a5abb2
+
+// .feature_buttons
+//     width: 15px
+//     height: 15px
+//     border: 3px solid $mainColor
+//     border-radius: 50%
+
+.features-grid ul, .tesimonails-grid ul
+    display: flex
+    margin: 0 auto
+    & li
+        margin-left: 5px
+
+.tesimonails-grid
+    flex-direction: column
+
+
+.features-grid ul .slick-active button, .tesimonails-grid ul .slick-active button
+    background-color: $mainColor
+
+.features-grid ul button, .tesimonails-grid ul button
+    width: 15px
+    height: 15px
+    border: 3px solid $mainColor
+    border-radius: 50%
+    color: transparent
+
+
+.modal-window
+    display: none
+    background-color:#f7f8fa
+    padding: 20px 40px 50px
+
+
+
+@import '_media'
+

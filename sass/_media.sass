@@ -1,0 +1,193 @@
+@import '_options'
+
+@for $i from 1 to length($mediaBp)
+    @media ( max-width: nth($mediaBp, $i) )
+        .container
+            max-width: nth($mediaBp, $i + 1)
+
+        @if nth($mediaBp, $i) == 980px
+            .main
+                &-title, &-text
+                    max-width: initial
+                    text-align: center
+                &-buttons
+                    justify-content: center
+
+            .promotion
+                &-grid-col
+                    width: 50%
+                &-img
+                    max-width: 100%
+                    margin-top: -30px
+            
+            .block1-gradient
+                padding-bottom: 70px
+    
+
+            .features
+                &-grid-col
+                    width: 50%
+                &-item
+                    width: 100%
+                    max-width: 255px
+                    margin: 0 auto
+
+            .tesimonails
+                &-grid-col
+                    padding: 0 15px
+                &-item-text
+                    padding: 15px
+
+            .footer-grid-col
+                width: calc((100% - 255px) / 3)
+                &:nth-child(4)
+                    width: 255px
+
+            .footer-item-mail
+                &-pole
+                    height: 30px
+                    width: 150px
+                &-button
+                    min-width: 80px
+                    height: 30px
+
+        @else if nth($mediaBp, $i) == 767px
+            .nav
+                z-index: 1
+                visibility: hidden
+                opacity: 0
+                position: fixed
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background-color: rgba(0,0,0,.8)
+                transition: .3s
+                &-list
+                    padding-top: 40px
+                    background-image: linear-gradient(to bottom, #000000 76.8%, #ffffff 76.8%)
+                    color: #ffffff
+                    text-shadow: 1px 1px 0 #979797
+                    flex-direction: column
+                    transition: .3s
+                    position: absolute
+                    top: 0
+                    left: 0
+                    height: 100%
+                    overflow: hidden
+                    overflow-y: auto
+                    transform: translate(-100%, 0)
+                    li 
+                        padding-left: 10px
+                    li + li
+                        margin-left: 0
+                        margin-top: 5px
+                        border-bottom: 1px dotted grey
+                    li:first-child
+                        border-top: 1px dotted grey
+                        border-bottom: 1px dotted grey
+                    &-link
+                        display: block
+                        width: 240px
+                        font-size: 20px
+                        padding: 10px
+                &-toggle-input:checked + &
+                    visibility: visible
+                    opacity: 1
+                    & .nav-list
+                        transform: translate(0, 0)
+                &-toggle
+                    display: block
+    
+            .main-title
+                font-size: 34px
+            
+            .promotion
+                text-align: center
+                padding-top: 45px
+                &-grid-col
+                    width: auto
+                &-img
+                    display: none
+
+            .tesimonails-item-speaker-prof
+                padding-left: 5px
+
+            .tesimonails-grid-col
+                width: 50%
+                &:first-child
+                    display: none
+            
+            .footer-grid-col
+                width: calc(100%  / 3)
+                &:nth-child(4)
+                    width: 100%
+
+            .footer-grid-col, .footer-grid-col:nth-child(4), .footer-item-link
+                    text-align: center
+    
+            .footer-item
+                &-mail
+                    justify-content: center
+                &-text
+                    align-items: center
+
+        @else if nth($mediaBp, $i) == 640px
+            .tesimonails-grid-col
+                width: 100%
+                &:nth-child(2) 
+                    display: none
+
+        @else if nth($mediaBp, $i) == 480px
+            .header
+                padding-top: 15px
+    
+            .logo
+                font-size: 16px
+    
+            .block1-gradient
+                padding-top: 80px
+                padding-bottom: 40px
+   
+            .main-title, .trial-title
+                font-size: 24px
+                
+            .main
+                &-text
+                    line-height: 1.4
+                &-buttons
+                    flex-direction: column
+                    align-items: center
+    
+            .promotion-title
+                font-size: 20px
+
+            .promotion, .features,
+            .tesimonails, .start-your-trial
+                padding-top: 40px
+                padding-bottom: 40px
+            .title
+                font-size: 23px
+
+            .sub-title, .trial-sub-title
+                font-size: 16px
+                margin-top: 10px
+
+            .features-grid-col
+                width: 100%
+
+            .footer
+                &-grid-col, &-grid-col:nth-child(4), &-item-link, &-item-text
+                    width: 100%
+
+            .footer-item-mail
+                &-pole 
+                    width: 65%
+                &-button 
+                    width: 30%
+                    margin-left: 7px
+                    margin-top: 0
+
+            .copyright-text
+                margin-top: 45px
+                text-align: center

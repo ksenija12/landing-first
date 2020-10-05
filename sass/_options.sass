@@ -1,0 +1,16 @@
+$mainColor: #2095bc
+
+$mediaBp: (1200px, 980px, 767px, 640px, 480px, 320px)
+
+@mixin grid($name, $p, $m, $wrap, $col, $pad)
+    .#{$name}-grid
+        display: flex
+        flex-wrap: $wrap
+        margin: -$p + px
+        margin-top: $m + px
+        &-col
+            width: calc(100% / #{$col})
+            padding: $pad + px
+
+        
+     
